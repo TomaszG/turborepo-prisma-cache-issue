@@ -1,0 +1,14 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "generate": {
+      "inputs": [
+        "package.json",
+        "src/prisma/schema.prisma"
+      ],
+      "outputs": [
+        "../../node_modules/.pnpm/@prisma+client*/node_modules/.prisma/client/**"
+      ]
+    }
+  }
+}
