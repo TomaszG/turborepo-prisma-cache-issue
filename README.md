@@ -27,19 +27,19 @@
     ```bash
     ls -la node_modules/.pnpm/@prisma+client*/node_modules/.prisma/client/**
     ```
-    Should return **no matches found** error
+    **Expected result**: Should return **no matches found** error
 6. Once again generate Prisma Client with 
     ```bash
     pnpm turbo generate
     ```
-    Should restore generated client from turbo cache
+    **Expected result**: Should restore generated client from turbo cache
 7. Check if Prisma Client files were restored with 
     ```bash
     ls -la node_modules/.pnpm/@prisma+client*/node_modules/.prisma/client/**
     ```
-    Files were not restored
-8. Check if Prisma Client files were cached with
+    **Result**: Files were not restored
+8. Check if Prisma Client files were cached with (hashin the fileanme may be different)
     ```bash
     tar --use-compress-program=unzstd -ztvf node_modules/.cache/turbo/27dc189e81124d92.tar.zst
     ```
-    (hash may be different) - files are there but they were not restored
+    **Result**: Files are there but they were not restored
